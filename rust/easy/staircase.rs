@@ -7,7 +7,9 @@ use std::io::{self, BufRead};
  */
 
 fn staircase(n: i32) {
-    
+    for row in 1..n {
+        println!("\n");
+    }
 }
 
 fn main() {
