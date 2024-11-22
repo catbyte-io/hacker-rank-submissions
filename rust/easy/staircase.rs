@@ -7,9 +7,22 @@ use std::io::{self, BufRead};
  */
 
 fn staircase(n: i32) {
-    for row in 1..n {
-        println!("\n");
-    }
+     let mut m = n;
+     loop {
+        loop {
+        if m <= 0 || m > 100 {
+            break;
+        }
+        for i in 1..m {
+            print!(" ");
+        }
+        for j in 0..(n-m) + 1 {
+            print!("#");
+        }
+        println!("");
+        m -= 1;
+        }
+     }
 }
 
 fn main() {
