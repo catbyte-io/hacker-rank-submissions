@@ -10,7 +10,9 @@ use std::io::{self, BufRead, Write};
  */
 
 fn birthdayCakeCandles(candles: &[i32]) -> i32 {
-
+    let tallest_candle = candles.iter().max().unwrap()
+    let tallest_candle_count = 0;
+    return tallest_candle_count;
 }
 
 fn main() {
