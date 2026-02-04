@@ -2,6 +2,7 @@ use std::env;
 use std::fs::File;
 use std::io::{self, BufRead, Write};
 
+
 /*
  * Complete the 'timeConversion' function below.
  * Given a time in -hour AM/PM format, convert it to military (24-hour) time.
@@ -10,7 +11,12 @@ use std::io::{self, BufRead, Write};
  */
 
 fn time_conversion(s: &str) -> String {
+    // trim whitespace and convert characters to uppercase
+    let time_str = s.trim().to_uppercase();
 
+
+    let converted_time = time_str;
+    return converted_time;
 }
 
 fn main() {
