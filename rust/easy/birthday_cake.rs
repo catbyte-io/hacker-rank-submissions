@@ -9,9 +9,13 @@ use std::io::{self, BufRead, Write};
  * The function accepts INTEGER_ARRAY candles as parameter.
  */
 
-fn birthdayCakeCandles(candles: &[i32]) -> i32 {
-    let tallest_candle = candles.iter().max().unwrap()
-    let tallest_candle_count = 0;
+fn birthday_cake_candles(candles: &[i32]) -> i32 {
+    if candles.is_empty() {
+        return 0;
+    }
+    let tallest_candle = *candles.iter().max().unwrap();  // iterate through the candles array to find the tallest candle
+    let tallest_candle_count: i32 = candles.iter().filter(|&&x| x == tallest_candle).count() as i32;  // create iterator that counts the number of tallest candles
+
     return tallest_candle_count;
 }
 
@@ -29,7 +33,7 @@ fn main() {
         .map(|s| s.to_string().parse::<i32>().unwrap())
         .collect();
 
-    let result = birthdayCakeCandles(&candles);
+    let result = birthday_cake_candles(&candles);
 
     writeln!(&mut fptr, "{}", result).ok();
 }
