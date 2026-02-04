@@ -9,7 +9,7 @@ use std::io::{self, BufRead, Write};
  * The function accepts STRING s as parameter.
  */
 
-fn timeConversion(s: &str) -> String {
+fn time_conversion(s: &str) -> String {
 
 }
 
@@ -21,7 +21,7 @@ fn main() {
 
     let s = stdin_iterator.next().unwrap().unwrap();
 
-    let result = timeConversion(&s);
+    let result = time_conversion(&s);
 
     writeln!(&mut fptr, "{}", result).ok();
 }
