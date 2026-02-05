@@ -14,6 +14,14 @@ fn time_conversion(s: &str) -> String {
     // trim whitespace and convert characters to uppercase
     let time_str = s.trim().to_uppercase();
 
+    // get the time and period parts of the string
+    let (time_part, period_part) = time_str.split_at(time_str.len() - 2);
+
+    println!("time_part: {} period_part {}", time_part, period_part);
+
+    // get the hour
+    let hour = &time_part[0..2];
+    println!("hour: {}", hour);
 
     let converted_time = time_str;
     return converted_time;
