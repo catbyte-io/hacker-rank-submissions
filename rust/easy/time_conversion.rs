@@ -17,16 +17,12 @@ fn time_conversion(s: &str) -> String {
     // get the time and period parts of the string
     let (time_part, period_part) = time_str.split_at(time_str.len() - 2);
 
-    println!("time_part: {} period_part {}", time_part, period_part);
-
     // get the hour
     let hour_slice = &time_part[0..2];
     let mut hour: i32 = hour_slice.parse().expect("Could not parse hour");
-    println!("hour: {}", hour);
 
     // get the rest
     let time_slice = &time_part[2..time_part.len()];
-    println!("time_slice: {}", time_slice);
 
     // convert period_part to String
     let period_str = String::from(period_part);
