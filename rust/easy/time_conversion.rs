@@ -24,7 +24,21 @@ fn time_conversion(s: &str) -> String {
     let mut hour: i32 = hour_slice.parse().expect("Could not parse hour");
     println!("hour: {}", hour);
 
-    let converted_time = time_str;
+    // get the rest
+    let time_slice = &time_part[3..(time_part.len() - 1)];
+    println!("time_slice: {}", time_slice);
+
+    // convert period_part to String
+    let period_str = String::from(period_part);
+
+    // if the period part is PM, add 12 hours to the hour, mod 24
+    if period_str == "PM" {
+        if hour > 12{
+            hour +=12;
+        }
+    }
+
+    let converted_time = [hour.to_string(), time_slice.to_string(), period_str].join("");
     return converted_time;
 }
 
