@@ -33,12 +33,20 @@ fn time_conversion(s: &str) -> String {
 
     // if the period part is PM, add 12 hours to the hour, mod 24
     if period_str == "PM" {
-        if hour > 12{
-            hour +=12;
+        if hour < 12{
+            hour += 12;
+        }
+    }
+    else if period_str == "AM" {
+        if hour == 12 {
+            hour = 0;
         }
     }
 
-    let converted_time = [hour.to_string(), time_slice.to_string(), period_str].join("");
+    // make sure the hour is always two digits
+    let format_hour = format!("{:02}", hour);
+
+    let converted_time = [format_hour, time_slice.to_string()].join("");
     return converted_time;
 }
 
