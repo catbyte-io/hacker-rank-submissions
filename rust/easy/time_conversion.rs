@@ -20,7 +20,8 @@ fn time_conversion(s: &str) -> String {
     println!("time_part: {} period_part {}", time_part, period_part);
 
     // get the hour
-    let hour = &time_part[0..2];
+    let hour_slice = &time_part[0..2];
+    let mut hour: i32 = hour_slice.parse().expect("Could not parse hour");
     println!("hour: {}", hour);
 
     let converted_time = time_str;
