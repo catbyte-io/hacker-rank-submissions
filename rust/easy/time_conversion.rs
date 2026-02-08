@@ -25,7 +25,7 @@ fn time_conversion(s: &str) -> String {
     println!("hour: {}", hour);
 
     // get the rest
-    let time_slice = &time_part[3..(time_part.len() - 1)];
+    let time_slice = &time_part[3..time_part.len()];
     println!("time_slice: {}", time_slice);
 
     // convert period_part to String
