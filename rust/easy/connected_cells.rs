@@ -10,7 +10,13 @@ use std::io::{self, BufRead, Write};
  */
 
 fn connected_cell(matrix: &[Vec<i32>]) -> i32 {
+    // determine matrix size
+    let rows = matrix.len();
+    let columns = matrix[0].len();
 
+    for i in 0..rows {
+
+    }
 }
 
 fn main() {
