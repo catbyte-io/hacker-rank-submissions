@@ -9,8 +9,32 @@ use std::io::{self, BufRead, Write};
  * The function accepts INTEGER_ARRAY grades as parameter.
  */
 
-fn grading_students(grades: &[i32]) -> Vec<i32> {
+ fn round_5(grade: i32) -> i32 {
+    let rounded = (grade / 5) * 5;
+    if (rounded - grade) < 3 {
+        return rounded;
+    }
+    else {
+        return grade;
+    }
+    
+ }
 
+fn grading_students(grades: &[i32]) -> Vec<i32> {
+    // create vector to store grades
+    let mut rounded_grades = Vec::new();
+
+    for &grade in grades {
+        if grade < 40 {
+            rounded_grades.push(grade);
+        }
+        else {
+            let rounded_grade = round_5(grade);
+            rounded_grades.push(rounded_grade);
+        }
+    }
+
+    return rounded_grades;
 }
 
 fn main() {
