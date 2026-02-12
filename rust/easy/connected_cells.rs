@@ -14,6 +14,7 @@ fn connected_cell(matrix: &[Vec<i32>]) -> i32 {
     let rows = matrix.len();
     let columns = matrix[0].len();
 
+    // iterate through each row and column, counting the 
     for i in 0..rows {
 
     }
