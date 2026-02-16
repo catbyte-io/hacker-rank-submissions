@@ -39,7 +39,7 @@ fn count_apples_oranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges:
             apple_count += 1;
         }
     }
-    println!(apple_count);
+    println!("{}", apple_count);
 
     // calculate oranges within range
     for &orange in oranges {
@@ -47,7 +47,7 @@ fn count_apples_oranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges:
             orange_count += 1;
         }
     }
-    println!(orange_count);
+    println!("{}", orange_count);
 }
 
 fn main() {
