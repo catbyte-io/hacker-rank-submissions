@@ -12,8 +12,9 @@ use std::io::{self, BufRead};
  *  6. INTEGER_ARRAY oranges
  */
 
-fn countApplesAndOranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges: &[i32]) {
-
+fn count_apples_oranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges: &[i32]) {
+    //
+    let mut apples_position = Vec::new();
 }
 
 fn main() {
@@ -59,5 +60,5 @@ fn main() {
         .map(|s| s.to_string().parse::<i32>().unwrap())
         .collect();
 
-    countApplesAndOranges(s, t, a, b, &apples, &oranges);
+    count_apples_oranges(s, t, a, b, &apples, &oranges);
 }
