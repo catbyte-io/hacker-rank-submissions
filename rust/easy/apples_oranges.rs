@@ -35,7 +35,7 @@ fn count_apples_oranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges:
 
     // calculate apples within range
     for apple in apple_positions {
-        if apple > s && apple < t {
+        if apple >= s && apple <= t {
             apple_count += 1;
         }
     }
@@ -43,7 +43,7 @@ fn count_apples_oranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges:
 
     // calculate oranges within range
     for orange in orange_positions {
-        if orange > s && orange < t {
+        if orange >= s && orange <= t {
             orange_count += 1;
         }
     }
