@@ -3,6 +3,8 @@ use std::fs::File;
 use std::io::{self, BufRead, Write};
 
 /*
+ * PASSED
+ *
  * Complete the 'gradingStudents' function below.
  *
  * The function is expected to return an INTEGER_ARRAY.
