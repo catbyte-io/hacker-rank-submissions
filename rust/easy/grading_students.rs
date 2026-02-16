@@ -25,7 +25,7 @@ fn grading_students(grades: &[i32]) -> Vec<i32> {
     let mut rounded_grades = Vec::new();
 
     for &grade in grades {
-        if grade < 40 {
+        if grade < 38 {
             rounded_grades.push(grade);
         }
         else {
