@@ -29,6 +29,9 @@ fn count_apples_oranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges:
         orange_positions.push(postion);
     }
 
+    // create counters for the apples and oranges that land within range
+    let mut apple_count = 0;
+    let mut orange_count = 0;
 }
 
 fn main() {
