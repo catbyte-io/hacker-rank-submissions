@@ -1,6 +1,7 @@
 use std::io::{self, BufRead};
 
 /*
+   PASSED
  * Complete the 'countApplesAndOranges' function below.
  *
  * The function accepts following parameters:
