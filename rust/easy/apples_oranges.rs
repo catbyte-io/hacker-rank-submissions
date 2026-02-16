@@ -13,8 +13,22 @@ use std::io::{self, BufRead};
  */
 
 fn count_apples_oranges(s: i32, t: i32, a: i32, b: i32, apples: &[i32], oranges: &[i32]) {
-    //
-    let mut apples_position = Vec::new();
+    // vectors to store landing positions of apples and oranges
+    let mut apple_positions = Vec::new();
+    let mut orange_positions = Vec::new();
+
+    // calculate landing positions of apples
+    for apple in &apples {
+        let position = apple + a;  // adds the landing position plus the distance of the tree
+        apple_positions.push(position);
+    }
+
+    // calculate landing positions of oranges
+    for orange in &oranges {
+        let postion = orange + b;
+        orange_positions.push(postion);
+    }
+
 }
 
 fn main() {
