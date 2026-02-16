@@ -10,14 +10,13 @@ use std::io::{self, BufRead, Write};
  */
 
  fn round_5(grade: i32) -> i32 {
-    let rounded = (grade / 5) * 5;
-    if (rounded - grade) < 3 {
+    if grade % 10 >= 8 {
+        let rounded = (grade / 5) * 5 + 5;
         return rounded;
     }
     else {
         return grade;
     }
-    
  }
 
 fn grading_students(grades: &[i32]) -> Vec<i32> {
