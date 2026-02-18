@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::{self, BufRead, Write};
 
 /*
+* PASSING
  * Complete the 'kangaroo' function below.
  *
  * The function is expected to return a STRING.
