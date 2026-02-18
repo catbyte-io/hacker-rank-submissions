@@ -13,7 +13,7 @@ use std::io::{self, BufRead, Write};
  */
 
 fn birthday(s: &[i32], d: i32, m: i32) -> i32 {
-
+    let mut possibilities = 0;
 }
 
 fn main() {
