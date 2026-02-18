@@ -12,8 +12,17 @@ use std::io::{self, BufRead, Write};
  *  3. INTEGER m
  */
 
-fn birthday(s: &[i32], d: i32, m: i32) -> i32 {
+fn birthday(s: &[i32], d: i32, m: i32, n: i32) -> i32 {
     let mut possibilities = 0;
+
+    for i in 0..=(n - m) {
+        let bar_slice = &s[i as usize..(i + m) as usize];
+        let total: i32 = bar_slice.iter().sum();
+        if total == d {
+            possibilities += 1;
+        }
+    }
+    return possibilities;
 }
 
 fn main() {
@@ -39,7 +48,7 @@ fn main() {
 
     let m = first_multiple_input[1].trim().parse::<i32>().unwrap();
 
-    let result = birthday(&s, d, m);
+    let result = birthday(&s, d, m, n);
 
     writeln!(&mut fptr, "{}", result).ok();
 }
