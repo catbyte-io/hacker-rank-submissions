@@ -10,7 +10,29 @@ use std::io::{self, BufRead, Write};
  */
 
 fn breaking_records(scores: &[i32]) -> Vec<i32> {
+    let mut records = Vec::new();
 
+    // Track highest and lowest scores
+    let mut highest_record = scores[0];
+    let mut lowest_record = scores[0];
+
+    // Trackers for record breaks
+    let mut highest_record_breaks = 0;
+    let mut lowest_record_breaks = 0;
+
+    for &score in scores {
+        if score > highest_record {
+            highest_record = score;
+            highest_record_breaks += 1;
+        }
+        if score < lowest_record {
+            lowest_record = score;
+            lowest_record_breaks += 1;
+        }
+    }
+    records.push(highest_record_breaks);
+    records.push(lowest_record_breaks);
+    return records;
 }
 
 fn main() {
@@ -19,7 +41,7 @@ fn main() {
 
     let mut fptr = File::create(env::var("OUTPUT_PATH").unwrap()).unwrap();
 
-    let n = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
+    let _n = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
 
     let scores: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
         .trim_end()
