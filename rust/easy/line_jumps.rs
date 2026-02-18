@@ -14,7 +14,24 @@ use std::io::{self, BufRead, Write};
  */
 
 fn kangaroo(x1: i32, v1: i32, x2: i32, v2: i32) -> String {
+    let max_jumps = 10000;
+    // Check if the velocity is slower and the starting point behind for the first kangaroo
+    if x2 > x1 && v2 > v1 {
+        return "NO".to_string();  // The kangaroo will never catch up
+    }
+    // Check other kangaroo
+    if x1 > x2 && v1 > v2 {
+        return "NO".to_string();
+    }
 
+    for i in 0..max_jumps {
+        let k1 = v1 * i + x1;
+        let k2 = v2 * i + x2;
+        if k1 == k2 {
+            return "YES".to_string();
+        }
+    }
+    return "NO".to_string();
 }
 
 fn main() {
