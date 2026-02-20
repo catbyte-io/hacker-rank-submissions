@@ -9,7 +9,7 @@ use std::io::{self, BufRead, Write};
  * The function accepts INTEGER year as parameter.
  */
 
-fn dayOfProgrammer(year: i32) -> String {
+fn day_of_programmer(year: i32) -> String {
 
 }
 
@@ -21,7 +21,7 @@ fn main() {
 
     let year = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
 
-    let result = dayOfProgrammer(year);
+    let result = day_of_programmer(year);
 
     writeln!(&mut fptr, "{}", result).ok();
 }
