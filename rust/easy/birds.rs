@@ -10,7 +10,14 @@ use std::io::{self, BufRead, Write};
  */
 
 fn migratory_birds(arr: &[i32]) -> i32 {
-
+    let mut bird_counts = vec![0; 6];
+    for &bird in arr.iter() {
+        bird_counts[bird as usize] += 1;
+    }
+    let highest_count = bird_counts.iter().max().unwrap();
+    // Get the first index where the highest count occurs, as this will be the lowest ID for the bird seen most
+    let bird_type = bird_counts.iter().position(|&x| x == *highest_count).unwrap();
+    return bird_type as i32;
 }
 
 fn main() {
