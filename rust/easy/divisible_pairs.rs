@@ -12,8 +12,18 @@ use std::io::{self, BufRead, Write};
  *  3. INTEGER_ARRAY ar
  */
 
-fn divisible_sum_pairs(n: i32, k: i32, ar: &[i32]) -> i32 {
+fn divisible_sum_pairs(k: i32, ar: &[i32]) -> i32 {
+    // Track the pairs
+    let mut count = 0;
 
+    for (i, &a) in ar.iter().enumerate() {
+        for &b in &ar[i + 1..] {
+            if (a + b) % k == 0 {
+                count += 1;
+            }
+        }
+    }
+    return count;
 }
 
 fn main() {
@@ -27,7 +37,7 @@ fn main() {
         .map(|s| s.to_string())
         .collect();
 
-    let n = first_multiple_input[0].trim().parse::<i32>().unwrap();
+    let _n = first_multiple_input[0].trim().parse::<i32>().unwrap();
 
     let k = first_multiple_input[1].trim().parse::<i32>().unwrap();
 
@@ -37,7 +47,7 @@ fn main() {
         .map(|s| s.to_string().parse::<i32>().unwrap())
         .collect();
 
-    let result = divisible_sum_pairs(n, k, &ar);
+    let result = divisible_sum_pairs(k, &ar);
 
     writeln!(&mut fptr, "{}", result).ok();
 }
