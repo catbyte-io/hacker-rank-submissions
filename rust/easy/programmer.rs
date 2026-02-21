@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use std::env;
 use std::fs::File;
 use std::io::{self, BufRead, Write};
@@ -10,26 +11,37 @@ use std::io::{self, BufRead, Write};
  */
 
 fn day_of_programmer(year: i32) -> String {
-    let mut february = 0;
+    // Create dictionary to store month values
+    let mut months = HashMap::new();
+
+    // Add the month mappings up to September except February.
+    months.extend([(1, 31), (3, 31), (4, 30), (5, 31), (6, 30), (7, 31), (8, 31), (9, 30)]);
+
+    // Configure February based on year
     if year < 1918 {  // Checks for Julian calendar
         if year % 4 == 0 { // Checks for Julian calendar leap year
-            february = 29;
+            months.extend([(2, 29)]);
         }
         else {
-            february = 28;
+            months.extend([(2, 28)]);
         }
     }
     else if year > 1918 { // Checks for Gregorian calendar
         if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0) { // Checks for leap year
-            february = 29;
+            months.extend([(2, 29)]);
         }
         else {
-            february = 28;
+            months.extend([(2, 28)]);
         }
     }
-    else {
-        february = 14;
+    else { // If year is 1918
+        months.extend([(2, 14)]);
     }
+
+    // Add the months while the sum is less than 256 
+
+    // Use modulus operator to get the day
+
 }
 
 fn main() {
