@@ -38,10 +38,22 @@ fn day_of_programmer(year: i32) -> String {
         months.extend([(2, 14)]);
     }
 
-    // Add the months while the sum is less than 256 
+    // Add the month days while the sum is less than 256 
+    let mut month = 1;
+    let mut days = 0;
+    let mut day = 0;
+    while days < 256 {
+        days += months[&month];
+        if days >= 256 {
+            days -= months[&month];
+            day = 256 - days;
+            break; 
+        }
+        month += 1;
+    }
 
-    // Use modulus operator to get the day
-
+    let date = format!("{}.{}.{}", day, month, year);
+    return date;
 }
 
 fn main() {
