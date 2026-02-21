@@ -11,8 +11,8 @@ use std::io::{self, BufRead, Write};
  *  2. INTEGER_ARRAY ar
  */
 
-fn sockMerchant(n: i32, ar: &[i32]) -> i32 {
-
+fn sock_merchant(n: i32, ar: &[i32]) -> i32 {
+    
 }
 
 fn main() {
@@ -29,7 +29,7 @@ fn main() {
         .map(|s| s.to_string().parse::<i32>().unwrap())
         .collect();
 
-    let result = sockMerchant(n, &ar);
+    let result = sock_merchant(n, &ar);
 
     writeln!(&mut fptr, "{}", result).ok();
 }
