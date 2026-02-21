@@ -10,7 +10,20 @@ use std::io::{self, BufRead};
  */
 
 fn bon_appetit(bill: &[i32], k: i32, b: i32) {
-
+    let mut b_actual = 0;
+    for (index, item) in bill.iter().enumerate() {
+        if index as i32 == k {  // Skip the item Anna did not eat
+            continue;
+        }
+        b_actual += item;
+    }
+    let refund = b - (b_actual / 2);
+    if refund != 0 {
+        println!("{}", refund);
+    }
+    else {
+        println!("Bon Appetit");
+    }
 }
 
 fn main() {
@@ -22,7 +35,7 @@ fn main() {
         .map(|s| s.to_string())
         .collect();
 
-    let n = first_multiple_input[0].trim().parse::<i32>().unwrap();
+    let _n = first_multiple_input[0].trim().parse::<i32>().unwrap();
 
     let k = first_multiple_input[1].trim().parse::<i32>().unwrap();
 
