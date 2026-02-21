@@ -13,12 +13,16 @@ use std::collections::HashMap;
  */
 
 fn sock_merchant(_n: i32, ar: &[i32]) -> i32 {
-    let mut socks: HashMap<i32, usize> = HashMap::new();
+    let mut socks: HashMap<i32, i32> = HashMap::new();
     for each in ar.iter() {
         socks.entry(*each).and_modify(|count| *count += 1).or_insert(1);
     }
-    println!("{:?}", socks);
-    let pairs = 0;
+    
+    let mut pairs = 0;
+    for (_key, value) in socks.iter() {
+        pairs += value / 2;
+    }
+
     return pairs;
 }
 
