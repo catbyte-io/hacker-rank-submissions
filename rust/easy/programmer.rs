@@ -10,7 +10,26 @@ use std::io::{self, BufRead, Write};
  */
 
 fn day_of_programmer(year: i32) -> String {
-
+    let mut february = 0;
+    if year < 1918 {  // Checks for Julian calendar
+        if year % 4 == 0 { // Checks for Julian calendar leap year
+            february = 29;
+        }
+        else {
+            february = 28;
+        }
+    }
+    else if year > 1918 { // Checks for Gregorian calendar
+        if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0) { // Checks for leap year
+            february = 29;
+        }
+        else {
+            february = 28;
+        }
+    }
+    else {
+        february = 14;
+    }
 }
 
 fn main() {
