@@ -19,15 +19,15 @@ fn day_of_programmer(year: i32) -> String {
 
     // Configure February based on year
     if year < 1918 {  // Checks for Julian calendar
-        if year % 4 == 0 { // Checks for Julian calendar leap year
+        if year % 4 == 0 {  // Checks for Julian calendar leap year
             months.extend([(2, 29)]);
         }
         else {
             months.extend([(2, 28)]);
         }
     }
-    else if year > 1918 { // Checks for Gregorian calendar
-        if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0) { // Checks for leap year
+    else if year > 1918 {  // Checks for Gregorian calendar
+        if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0) {  // Checks for leap year
             months.extend([(2, 29)]);
         }
         else {
@@ -52,7 +52,7 @@ fn day_of_programmer(year: i32) -> String {
         month += 1;
     }
 
-    let date = format!("{}.{}.{}", day, month, year);
+    let date = format!("{:02}.{:02}.{}", day, month, year);
     return date;
 }
 
