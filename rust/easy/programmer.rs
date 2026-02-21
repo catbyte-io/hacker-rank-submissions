@@ -35,7 +35,7 @@ fn day_of_programmer(year: i32) -> String {
         }
     }
     else { // If year is 1918
-        months.extend([(2, 14)]);
+        months.extend([(2, 15)]);
     }
 
     // Add the month days while the sum is less than 256 
