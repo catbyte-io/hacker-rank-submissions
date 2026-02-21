@@ -1,6 +1,7 @@
 use std::env;
 use std::fs::File;
 use std::io::{self, BufRead, Write};
+use std::collections::HashMap;
 
 /*
  * Complete the 'sockMerchant' function below.
@@ -11,8 +12,14 @@ use std::io::{self, BufRead, Write};
  *  2. INTEGER_ARRAY ar
  */
 
-fn sock_merchant(n: i32, ar: &[i32]) -> i32 {
-    
+fn sock_merchant(_n: i32, ar: &[i32]) -> i32 {
+    let mut socks: HashMap<i32, usize> = HashMap::new();
+    for each in ar.iter() {
+        socks.entry(*each).and_modify(|count| *count += 1).or_insert(1);
+    }
+    println!("{:?}", socks);
+    let pairs = 0;
+    return pairs;
 }
 
 fn main() {
